@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ClassDiagram>
+    <Class name="work.Work_taxi" x="334" y="61">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Communication destinationClassName="work.Taxi"/>
+        <Communication destinationClassName="work.ReadLights"/>
+        <Communication destinationClassName="work.LightControlThread"/>
+        <Communication destinationClassName="work.Readmap"/>
+    </Class>
+    <Class name="work.DealInputRequest" x="33" y="158">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Association destinationClassName="work.Request"
+            endpointName="requestList" kind="Simple"/>
+        <Association destinationClassName="work.Taxi"
+            endpointName="taxiArray[]" kind="Simple">
+            <Point x="334" y="492"/>
+        </Association>
+        <Communication destinationClassName="work.Taxi"/>
+        <Communication destinationClassName="work.Request"/>
+    </Class>
+    <Class name="work.Taxi" x="378" y="450">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Association destinationClassName="work.Request"
+            endpointName="dealRequestList" kind="Simple">
+            <Point x="769" y="874"/>
+        </Association>
+        <Association destinationClassName="work.Request"
+            endpointName="request" kind="Simple">
+            <Point x="772" y="812"/>
+        </Association>
+        <Association destinationClassName="work.Request"
+            endpointName="requestList" kind="Simple">
+            <Point x="790" y="995"/>
+        </Association>
+        <Association destinationClassName="work.FlowThread"
+            endpointName="flowThread" kind="Simple"/>
+        <Association destinationClassName="work.Dijkstra"
+            endpointName="dijkstra" kind="Simple"/>
+        <Association destinationClassName="work.Request"
+            endpointName="taxiRequestList" kind="Simple">
+            <Point x="792" y="755"/>
+        </Association>
+        <Communication destinationClassName="work.Request"/>
+        <Communication destinationClassName="work.Dijkstra"/>
+        <Communication destinationClassName="work.FlowThread"/>
+    </Class>
+    <Class name="work.NewTaxi" x="721" y="1087">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Extension destinationClassName="work.Taxi"/>
+        <Communication destinationClassName="work.Taxi"/>
+        <Communication destinationClassName="work.Request"/>
+    </Class>
+    <Class name="work.LightControlThread" x="714" y="335">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+    </Class>
+    <Class name="work.ReadLights" x="888" y="135">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+    </Class>
+    <Class name="work.Readmap" x="620" y="135">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+    </Class>
+    <Class name="work.TaxiInfo" x="100" y="708">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Association destinationClassName="work.Taxi"
+            endpointName="taxi" kind="Simple">
+            <Point x="272" y="766"/>
+        </Association>
+        <Association destinationClassName="work.Taxi"
+            endpointName="taxiArray[]" kind="Simple">
+            <Point x="289" y="881"/>
+        </Association>
+    </Class>
+    <Class name="work.Request" x="892" y="668">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Association destinationClassName="work.Taxi"
+            endpointName="requestTaxiList" kind="Simple">
+            <Point x="795" y="910"/>
+            <Point x="719" y="955"/>
+        </Association>
+    </Class>
+    <Class name="work.Dijkstra" x="24" y="550">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+    </Class>
+    <Class name="work.DealRequestList" x="943" y="382">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Association destinationClassName="work.Request"
+            endpointName="requestList" kind="Simple"/>
+        <Association destinationClassName="work.FlowThread"
+            endpointName="flowThread" kind="Simple"/>
+        <Association destinationClassName="work.Taxi"
+            endpointName="taxiArray[]" kind="Simple"/>
+        <Communication destinationClassName="work.Taxi"/>
+        <Communication destinationClassName="work.Request"/>
+        <Communication destinationClassName="work.Dijkstra"/>
+    </Class>
+    <Class name="work.FlowThread" x="371" y="228">
+        <AttributesDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"/>
+        <MethodDisplayFilter public-accepted="true"
+            private-accepted="true" protected-accepted="true"
+            default-accepted="true" static-accepted="true"
+            accessors-accepted="true" constructors-accepted="true"/>
+        <Association destinationClassName="work.Taxi"
+            endpointName="taxiArray[]" kind="Simple">
+            <Point x="537" y="433"/>
+        </Association>
+        <Communication destinationClassName="work.Taxi"/>
+    </Class>
+</ClassDiagram>
